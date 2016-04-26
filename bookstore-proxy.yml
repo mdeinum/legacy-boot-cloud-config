@@ -1,0 +1,23 @@
+info:
+  component: Bookstore Proxy
+
+server:
+  port: 8080
+
+management:
+  port: 8075
+
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+zuul:
+  routes:
+    legacy:
+      path: /**
+      url: http://localhost:8090/
